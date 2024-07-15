@@ -1,0 +1,12 @@
+spring:
+  liquibase:
+    change-log: classpath:db/liquibase-changelog.xml
+  datasource:
+    url: jdbc:mysql://localhost:3306/forohub
+    username: root
+    password: admin
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

@@ -1,0 +1,101 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create-table-curso" author="carsneider">
+        <createTable tableName="cursos">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nombre" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-table-usuario" author="carsneider">
+        <createTable tableName="usuarios">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nombre" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-table-topico" author="carsneider">
+        <createTable tableName="topicos">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="titulo" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="mensaje" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fechaCreacion" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="estado" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_autor" type="int">
+                <constraints nullable="false" foreignKeyName="fk_topico_autor" references="usuarios(id)"/>
+            </column>
+            <column name="id_curso" type="int">
+                <constraints nullable="false" foreignKeyName="fk_topico_curso" references="cursos(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-table-respuestas" author="carsneider">
+        <createTable tableName="respuestas">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_topico" type="int">
+                <constraints nullable="false" foreignKeyName="fk_respuesta_topico" references="topicos(id)"/>
+            </column>
+            <column name="fechaCreacion" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_autor" type="int">
+                <constraints nullable="false" foreignKeyName="fk_respuesta_autor" references="usuarios(id)"/>
+            </column>
+            <column name="solucion" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-table-perfiles" author="carsneider">
+        <createTable tableName="perfiles">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nombre" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-table-perfil_usuario" author="carsneider">
+        <createTable tableName="perfiles_usuarios">
+            <column name="id_usuario" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_perfiles_usuarios" foreignKeyName="fk_perfil_usuario" references="usuarios(id)"/>
+            </column>
+            <column name="id_perfil" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_perfiles_usuarios" foreignKeyName="fk_perfil" references="perfiles(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
