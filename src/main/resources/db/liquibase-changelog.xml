@@ -4,4 +4,5 @@
                                            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <include file="changelog/creationTables.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/addRegistros.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

@@ -10,3 +10,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+api:
+  security:
+    secret: ${JWT_SECRET:carSneider}

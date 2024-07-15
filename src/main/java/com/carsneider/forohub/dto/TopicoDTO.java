@@ -1,5 +1,6 @@
 package com.carsneider.forohub.dto;
 
+import com.carsneider.forohub.entity.Estado;
 import com.carsneider.forohub.entity.Topico;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -9,10 +10,11 @@ public record TopicoDTO(
         @NotNull @NumberFormat Long id,
         @NotBlank String titulo,
         @NotBlank String mensaje,
+        Estado estado,
         @NotNull @NumberFormat Long idAutor,
         @NotNull @NumberFormat Long idCurso
 ) {
     public TopicoDTO(Topico topico){
-        this(topico.getId(), topico.getTitulo(), topico.getMensaje(), topico.getAutor().getId(), topico.getCurso().getId());
+        this(topico.getId(), topico.getTitulo(), topico.getMensaje(), topico.getEstado(), topico.getAutor().getId(), topico.getCurso().getId());
     }
 }
