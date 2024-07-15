@@ -26,4 +26,24 @@
         </insert>
     </changeSet>
 
+    <changeSet id="addTopicosExamples" author="carsneider">
+        <insert tableName="topicos">
+            <column name="titulo" value="Duda derivada clase 1" />
+            <column name="mensaje" value="En la clase se especifica una regla para realizarlo, pero en el curso el docente lo hace diferente" />
+            <column name="id_autor" value="1" />
+            <column name="id_curso" value="1" />
+        </insert>
+        <insert tableName="topicos">
+            <column name="titulo" value="Duda integral sen^2(x)" />
+            <column name="mensaje" value="Para esta integral no será más fácil aplicar propiedades trigonométricas" />
+            <column name="id_autor" value="1" />
+            <column name="id_curso" value="2" />
+        </insert>
+        <insert tableName="topicos">
+            <column name="titulo" value="Duda concepto de clase y objeto" />
+            <column name="mensaje" value="No entiendo la diferencia entre una clase y un objeto? En qué se diferencian?" />
+            <column name="id_autor" value="1" />
+            <column name="id_curso" value="3" />
+        </insert>
+    </changeSet>
 </databaseChangeLog>

@@ -42,10 +42,10 @@
             <column name="mensaje" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="fecha_creacion" type="datetime">
+            <column name="fecha_creacion" type="datetime" defaultValueDate="now()">
                 <constraints nullable="false"/>
             </column>
-            <column name="estado" type="varchar(20)">
+            <column name="estado" type="varchar(20)" defaultValue="ACTIVO">
                 <constraints nullable="false"/>
             </column>
             <column name="id_autor" type="int">
@@ -65,7 +65,7 @@
             <column name="id_topico" type="int">
                 <constraints nullable="false" foreignKeyName="fk_respuesta_topico" references="topicos(id)"/>
             </column>
-            <column name="fecha_creacion" type="datetime">
+            <column name="fecha_creacion" type="datetime" defaultValueDate="now()">
                 <constraints nullable="false"/>
             </column>
             <column name="id_autor" type="int">
