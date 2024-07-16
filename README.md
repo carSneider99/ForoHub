@@ -11,13 +11,13 @@ Al ejecutar el proyecto, se tiene el siguiente usuario por defecto para ser usad
 
 Dentro de las funcionalidades solicitadas por el reto, se tiene:
 
-1) Listar tópicos: El proyecto cuenta con unos tópicos ya creados en la BBDD. Se implementa paginación para listar lo tópicos.
+1) Listar tópicos: El proyecto cuenta con unos tópicos ya creados en la BBDD. Se implementa paginación para listar los tópicos.
 
 ![3-ListarTopicos.jpeg](img/3-ListarTópicos.jpeg)
 
 
 2) Registrar Nuevo tópico: Se registra nuevo tópico, validando que el id sea igual a -1 (Lo que lo diferencia con actualizar), además de implementar
-la regla de negocio de no registrar un tópico con título y mensaje duplicado.
+la regla de negocio de no registrar un tópico con título y mensaje duplicados.
 ![img.png](img/4-AgregarTópico.png)
 
 
