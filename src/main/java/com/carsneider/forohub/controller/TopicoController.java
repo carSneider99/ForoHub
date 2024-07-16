@@ -31,7 +31,7 @@ public class TopicoController {
     }
 
     @PostMapping
-    @Operation(summary = "Registra un nuevo tópico en la BBDD")
+    @Operation(summary = "Registra un nuevo tópico")
     public ResponseEntity<TopicoDTO> registrarTopico(@RequestBody @Valid TopicoDTO topicoDTO){
         return ResponseEntity.ok(topicoService.agregar(topicoDTO));
     }
@@ -42,7 +42,7 @@ public class TopicoController {
         return ResponseEntity.ok(topicoService.actualizarTopico(topicoDTO));
     }
 
-    @DeleteMapping("/{id")
+    @DeleteMapping("/{id}")
     @Operation(summary = "Elimina un tópcio al especificar el Id")
     public ResponseEntity eliminarTopico(@PathVariable Long id){
         topicoService.eliminarTopico(id);

@@ -1,6 +1,6 @@
 package com.carsneider.forohub.controller;
 
-import com.carsneider.forohub.dto.UsuarioDTO;
+import com.carsneider.forohub.dto.UsuarioIniciarSesionDTO;
 import com.carsneider.forohub.entity.Usuario;
 import com.carsneider.forohub.infra.security.DatosJWTToken;
 import com.carsneider.forohub.infra.security.TokenService;
@@ -28,7 +28,7 @@ public class AutenticacionController {
     private TokenService tokenService;
 
     @PostMapping
-    public ResponseEntity autenticarUsuario(@RequestBody @Valid UsuarioDTO usuario) {
+    public ResponseEntity autenticarUsuario(@RequestBody @Valid UsuarioIniciarSesionDTO usuario) {
         Authentication authToken = new UsernamePasswordAuthenticationToken(usuario.email(),
                 usuario.password());
         Authentication usuarioAutenticado = authenticationManager.authenticate(authToken);

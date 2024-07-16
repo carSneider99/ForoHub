@@ -28,7 +28,7 @@ public class CursoController {
     }
 
     @PostMapping
-    @Operation(summary = "Registra un nuevo curso en la base de datos")
+    @Operation(summary = "Registra un nuevo curso")
     public ResponseEntity<CursoDTO> agregarCurso(@RequestBody @Valid CursoDTO cursoDTO, UriComponentsBuilder uriComponentsBuilder){
         CursoDTO cursoGuardado = cursoService.guardarCurso(cursoDTO);
         URI url = uriComponentsBuilder. path("/cursos/{id}").buildAndExpand(cursoGuardado.id()).toUri();
