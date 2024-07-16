@@ -33,7 +33,7 @@ tendrá un error. Además, el título y mensaje a actualizar no deben de ya esta
 
 5) Eliminar tópico: Se debe de especificar el Id del tópico a eliminar. De no existir, se tendrá un error cómo la siguiente imagen: 
 
-![img.png](img/7- EliminarTópicoError.png)
+![img.png](img/7-EliminarTópicoError.png)
 
 En caso de existir, eliminará de forma permanente el tópico por el id específicado, obteniendo una respuesta 204. 
 ![img.png](img/8-EliminarTópico.png)
